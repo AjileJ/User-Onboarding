@@ -50,10 +50,10 @@ const FormikForms = withFormik ({
     };
   },
   validationSchema:Yup.object().shape({
-    name: Yup.string().required(),
-    email: Yup.string().required(),
-    password: Yup.string().required('Password is Required!'),
-    termsofservice: Yup.string().required()
+    name: Yup.string().required("Your name is required here!!!"),
+    email: Yup.string().required("Your email is required here!!!"),
+    password: Yup.string().required("Please insert a Password"),
+    termsofservice: Yup.string().required("Please check the box!")
   }),
   handleSubmit(values,{setStatus}){
     axios
