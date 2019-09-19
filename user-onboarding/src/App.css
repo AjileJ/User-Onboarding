@@ -123,6 +123,12 @@ p.error {
   position: absolute; 
   color:red;
 }
+.error2 {
+  margin-left: 200px;
+  position: absolute; 
+  bottom: 647px;
+  color:red;
+}
 
 input,
 textarea {

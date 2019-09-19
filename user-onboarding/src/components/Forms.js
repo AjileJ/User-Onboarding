@@ -25,8 +25,8 @@ const Forms = ({ values, errors, touched, status }) => {
         <label className="checkbox-container">
           Terms Of Service
           <Field type="checkbox" name="termsofservice" checked={values.termsofservice}
-          
         />
+        {touched.termsofservice && errors.termsofservice && <p className='error2'>{errors.termsofservice}</p>}
         <span className="checkmark" />
         </label>
         <button>Submit!</button>
@@ -54,8 +54,8 @@ const FormikForms = withFormik ({
   validationSchema:Yup.object().shape({
     name: Yup.string().required("Your name is required here!!!"),
     email: Yup.string().required("Your email is required here!!!"),
-    password: Yup.string().required("Please insert a Password"),
-    termsofservice: Yup.string().required("Please check the box!"),
+    password: Yup.string().required("Please insert a Password!!!!"),
+    termsofservice: Yup.boolean().oneOf([true], 'Must Accept Terms and Conditions'),
   }),
   handleSubmit(values,{setStatus}){
     axios
