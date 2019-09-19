@@ -120,8 +120,7 @@ button:hover {
 
 p.error {
   margin: 0;
-  position: absolute;
-  color: fushia;
+  position: absolute; 
   color:red;
 }
 

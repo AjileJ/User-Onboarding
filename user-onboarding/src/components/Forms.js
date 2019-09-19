@@ -20,10 +20,12 @@ const Forms = ({ values, errors, touched, status }) => {
         )}
         <Field type='text' name='email' placeholder='Email'/>
         {touched.email && errors.email && <p className='error'>{errors.email}</p>}
-        <Field type='text' name='password' placeholder='Password' className=''/>
+        <Field type='password' name='password' placeholder='Password'/>
+        {touched.password && errors.password && <p className='error'>{errors.password}</p>}
         <label className="checkbox-container">
           Terms Of Service
           <Field type="checkbox" name="termsofservice" checked={values.termsofservice}
+          
         />
         <span className="checkmark" />
         </label>
@@ -53,7 +55,7 @@ const FormikForms = withFormik ({
     name: Yup.string().required("Your name is required here!!!"),
     email: Yup.string().required("Your email is required here!!!"),
     password: Yup.string().required("Please insert a Password"),
-    termsofservice: Yup.string().required("Please check the box!")
+    termsofservice: Yup.string().required("Please check the box!"),
   }),
   handleSubmit(values,{setStatus}){
     axios
